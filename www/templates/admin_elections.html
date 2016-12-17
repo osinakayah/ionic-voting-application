@@ -1,0 +1,48 @@
+<ion-view view-title="Manage Elections">
+  <ion-content class = "light-bg">
+  	<ul class="list padding">
+
+  		<li class="item item-toggle">
+     		President
+     		<label class="toggle toggle-positive">
+       			<input ng-change="pres()" ng-model = "election.presState" type="checkbox">
+       			<div class="track">
+         			<div class="handle"></div>
+       			</div>
+     		</label>
+  		</li>
+  		<hr>
+  		<li class="item item-toggle">
+     		Vice President
+     		<label class="toggle toggle-positive">
+       			<input ng-change="vpres()" ng-model = "election.vpresState" type="checkbox">
+       			<div class="track">
+         			<div class="handle"></div>
+       			</div>
+     		</label>
+  		</li>
+  		<hr>
+  		<li class="item item-toggle">
+     		Treasurer
+     		<label class="toggle toggle-positive">
+       			<input ng-change="treasure()" ng-model = "election.treasureState" type="checkbox">
+       			<div class="track">
+         			<div class="handle"></div>
+       			</div>
+     		</label>
+  		</li>
+  		<hr>
+  		<li class="item item-toggle">
+     		Secretary
+     		<label class="toggle toggle-positive">
+       			<input ng-change="secretary()" ng-model = "election.secretaryState" type="checkbox">
+       			<div class="track">
+         			<div class="handle"></div>
+       			</div>
+     		</label>
+  		</li>
+
+	</ul>
+
+  </ion-content>
+</ion-view>

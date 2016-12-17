@@ -1,0 +1,37 @@
+<ion-view view-title="Students">
+  <ion-content>
+    <center><img src="img/register.png" style  = "width:150px; height:auto; margin-top:30px"></center>
+	
+    <div class="padding text-center login-notifi" ng-show="loginData.noti">
+
+		<span>Wrong Username or password</span>
+	</div>
+	<form ng-submit="doRegisterStudent()">
+	  	<div class="list padding">			   
+			<label class="item item-input item-floating-label">
+				<span class="input-label">Student Matric Number</span>
+				<input type="text" ng-model = "registerStudentData.matric" placeholder="Enter Student Matric Number" required>
+			</label>
+
+			<label class="item item-input item-floating-label">
+				<span class="input-label">Student Email</span>
+				<input type="email" ng-model = "registerStudentData.email" placeholder="Enter Student Email" required>
+			</label>
+			
+			<label class="item item-input item-floating-label">
+				<span class="input-label">Student Firstname</span>
+				<input type="text" ng-model = "registerStudentData.firstname" placeholder="Enter Student Firstname" required>
+			</label>
+
+			<label class="item item-input item-floating-label">
+				<span class="input-label">Student Lastname</span>
+				<input type="text" ng-model = "registerStudentData.lastname" placeholder="Enter Student Lastname" required>
+			</label>
+
+			<label class="item padding-top">
+				<button style = "border-radius: 30px;" class=" button button-raised button-block button-positive" type="submit">Register</button>
+			</label>
+		</div>
+	</form>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,20 @@
+<ion-modal-view>
+   <ion-header-bar class = "bar-balanced">
+      <button class = "button icon icon-left ion-close-circled" ng-click = "closeModal()"></button>
+   </ion-header-bar>
+	
+   <ion-content>
+   		<form ng-submit="addStudentToPosition()">
+   			<div class="item item-divider light-bg positive">{{studentName}} for ?</div>
+	   		<div class="list padding">
+	   			<ion-list>
+					<ion-radio ng-repeat="position in allPositions" ng-model="choice.pos" ng-value="'{{position.id}}'">{{position.name}}</ion-radio>
+				</ion-list>
+
+				<label class="item padding-top">
+					<button style = "border-radius: 30px;" class=" button button-raised button-block button-calm" type="submit">Add</button>
+				</label>
+			</div>
+   		</form>
+   </ion-content>
+</ion-modal-view>

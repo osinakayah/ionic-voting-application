@@ -1,0 +1,31 @@
+<link href="css/sign.css" rel="stylesheet">
+<ion-view view-title = "Login">
+<ion-content scroll="false" class="light-bg"><!-- style="background: url(img/login.jpg) center; background-size: cover;">-->
+	<center><img src="img/login.ico" style  = "width:120px; height:auto; margin-top:70px"></center>
+	
+    <div class="padding text-center login-notifi" ng-show="loginData.noti">
+
+		<span>Wrong Username or password</span>
+	</div>
+	<form ng-submit="doLogin()">
+	  	<div class="list padding">			   
+			<label class="item item-input item-floating-label">
+				<span class="input-label">Matric Number</span>
+				<input type="text" ng-model = "loginData.matric" placeholder="Enter Matric Number" required>
+			</label>
+			<label class="item item-input item-floating-label">
+				<span class="input-label">Password</span>
+				<input type="password" ng-model = "loginData.password" placeholder="Enter Password" required>
+			</label>
+			<label class="item padding-top">
+				<button style = "border-radius: 30px;" class=" button button-raised button-block button-balanced" type="submit">LOGIN</button>
+			</label>
+		</div>
+	</form>
+
+	
+	<div class="text-center">
+		<a ng-click="showForgot()" class="icon-right">Forgot password ?</a>
+	</div>
+</ion-content>
+</ion-view>

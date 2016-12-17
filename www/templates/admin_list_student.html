@@ -1,0 +1,23 @@
+<ion-view view-title="Contestant">
+  <ion-content>
+	<div class="list list-inset">
+		<label class="item item-input positive">
+	    	<i class="icon ion-search placeholder-icon"></i>
+	    	<input ng-model="stu_name" type="text" placeholder="Search Students"/>
+	  	</label>
+	</div>
+
+    <div class="list">
+		<div class="item item-divider light-bg positive">LIST OF STUDENTS</div>
+		<div ng-repeat="student in allStudents | filter : stu_name" class=" item item-avatar item-button-right">
+			<img src="img/avatar/{{student.name|uppercase|first_letter}}.png">
+			<h2>{{student.matric}}</h2>
+			<p>{{student.name}}</p>
+			<button ng-click="addToElection({{student}})" class="button button-positive button-outline">
+		    	<i class="icon ion-plus-round"></i>
+		    </button>
+		</div>
+
+	</div>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,21 @@
+<ion-view view-title="President">
+  <ion-content class = "stable-bg">
+  	<div style = "overflow: hidden; background: url(img/material1.jpg); background-size: 100% auto;" class = "side-jumbo">
+	    <center><img style = "margin-top:30px; margin-bottom:30px; width:120px; border-radius: 250px; height:120px"src="img/result.png"></center>
+    </div>
+
+    <div class="list">
+		<div class="item item-divider light-bg positive">LIST OF ANSPIRANTS</div>
+		<div ng-repeat="student in allPresidentAnspirant|filter : stu_name" class=" item item-avatar item-button-right">
+			<img src="img/avatar/{{student.name|uppercase|first_letter}}.png">
+			<h2>{{student.matric}}</h2>
+			<p>{{student.name}}</p>
+			<button ng-click="addToElection({{student}})" class="button button-positive button-outline">
+		    	<i class="icon ion-plus-round"></i>
+		    </button>
+		</div>
+
+	</div>
+
+  </ion-content>
+</ion-view>
