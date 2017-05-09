@@ -52,7 +52,7 @@ angular.module('starter.controllers', ['ionic', 'ui.router'])
   };
 })
 
-.controller('AuthCtrl', function($scope, $http, $ionicLoading, $localStorage, $state, $location, $ionicViewService, $window){
+.controller('AuthCtrl', function($scope, $http, $ionicLoading, $localStorage, $state, $location, $ionicViewService, $window, $ionicPopup){
 
   var u = $localStorage.userId;
   var ty = $localStorage.accType;
@@ -74,12 +74,20 @@ angular.module('starter.controllers', ['ionic', 'ui.router'])
     
   }
 
+  $scope.forgotData = {};
+  $scope.doForget = function(){
+    console.log(JSON.stringify($scope.forgotData));
+    var alertPopup = $ionicPopup.alert({
+          title: 'Message',
+          template: 'Password Sent'
+      });
+  };
 
   $scope.loginData = {};
   $scope.loginData.noti = false;
   $scope.doLogin = function(){
     console.log('e', JSON.stringify($scope.loginData))
-    var link = "https://milang-osindex.c9users.io/login.php";
+    var link = "http://localhost/milang/login.php";
     $ionicLoading.show();
     $prom = $http.post(link, JSON.stringify($scope.loginData));
     $prom.success(function(res){
@@ -133,7 +141,7 @@ angular.module('starter.controllers', ['ionic', 'ui.router'])
   $scope.registerStudentData = {};
   $scope.doRegisterStudent = function(){
     console.log(1, JSON.stringify($scope.registerStudentData));
-    var link = "https://milang-osindex.c9users.io/add_student.php";
+    var link = "http://localhost/milang/add_student.php";
     $ionicLoading.show();
     $prom = $http.post(link, JSON.stringify($scope.registerStudentData));
     $prom.success(function(res){
@@ -176,7 +184,7 @@ angular.module('starter.controllers', ['ionic', 'ui.router'])
   $scope.addStudentToPosition = function(){
     console.log(1,JSON.stringify(studentToBeAssignedContestionPost));
     console.log(2, JSON.stringify($scope.choice));
-    var link = "https://milang-osindex.c9users.io/add_contestant.php";
+    var link = "http://localhost/milang/add_contestant.php";
     $ionicLoading.show();
     $prom = $http.post(link,  {user_id:studentToBeAssignedContestionPost.id, position_id:$scope.choice.pos});
     $prom.success(function(res){
@@ -242,7 +250,7 @@ angular.module('starter.controllers', ['ionic', 'ui.router'])
     else{
        s =  1;
     }
-      var link = "https://milang-osindex.c9users.io/change_state.php?position_id=1&state="+s;
+      var link = "http://localhost/milang/change_state.php?position_id=1&state="+s;
       console.log('2', link);
       $ionicLoading.show();
       $prom = $http.get(link);
@@ -259,7 +267,7 @@ angular.module('starter.controllers', ['ionic', 'ui.router'])
     else{
        s =  1;
     }
-      var link = "https://milang-osindex.c9users.io/change_state.php?position_id=2&state="+s;
+      var link = "http://localhost/milang/change_state.php?position_id=2&state="+s;
       console.log('2', link);
       $ionicLoading.show();
       $prom = $http.get(link);
@@ -276,7 +284,7 @@ angular.module('starter.controllers', ['ionic', 'ui.router'])
     else{
        s =  1;
     }
-      var link = "https://milang-osindex.c9users.io/change_state.php?position_id=3&state="+s;
+      var link = "http://localhost/milang/change_state.php?position_id=3&state="+s;
       console.log('2', link);
       $ionicLoading.show();
       $prom = $http.get(link);
@@ -293,7 +301,7 @@ angular.module('starter.controllers', ['ionic', 'ui.router'])
     else{
        s =  1;
     }
-      var link = "https://milang-osindex.c9users.io/change_state.php?position_id=4&state="+s;
+      var link = "http://localhost/milang/change_state.php?position_id=4&state="+s;
       console.log('2', link);
       $ionicLoading.show();
       $prom = $http.get(link);
@@ -338,7 +346,7 @@ angular.module('starter.controllers', ['ionic', 'ui.router'])
       });
       return;
     }
-    var link = "https://milang-osindex.c9users.io/cast_vote.php";
+    var link = "http://localhost/milang/cast_vote.php";
     $ionicLoading.show();
     $prom = $http.post(link, {election_id:$scope.choice.pos, voter_id:$localStorage.userId, position_id:$stateParams.position});
     $prom.success(function(res){
